@@ -13,10 +13,10 @@ TEST_CASE("Verify factorial")
 	REQUIRE(720 == factorial(6));
 }
 
-TEST_CASE("Verify gcd")
+TEST_CASE("Verify GCD")
 {
-	REQUIRE(5 == gcd(5,15));
+	REQUIRE(5 == gcd(15,5));
 	REQUIRE(7 == gcd(21,28));
-	REQUIRE(25 == gcd(25, 100));
+	REQUIRE(25 == gcd(25,100));
 }
 

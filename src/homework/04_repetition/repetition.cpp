@@ -25,27 +25,39 @@ int factorial(int num)
 int gcd(int num1, int num2)
 {
     //Declare additional variables
+    int mod1 = num1;
+    int mod2 = num2;
+    int modCalc = 1;
     int greatestCommonDivisor;
 
     //Begin do-while loop
-    do
+    while (modCalc > 0)
     {
-        if(num1 < num2)
+        //GCD if remainder of 0 is true first
+        if((mod1 % mod2) == 0 || (mod2 % mod1) == 0)
         {
-            greatestCommonDivisor = num1;
-            num1 = num2;
-            num2 = greatestCommonDivisor;
-            greatestCommonDivisor = num1 - num2;
+            greatestCommonDivisor = (mod1 < mod2) ? mod1:mod2;
+            modCalc = 0;
         }
-        else if (num1 > num2)
+        //if the first value is more than the second value
+        else if (mod1 > mod2)
         {
-            greatestCommonDivisor = num1 - num2;
+            modCalc = mod1 % mod2;
+            mod1 = mod2;
+            greatestCommonDivisor = mod2;
+            mod2 = modCalc;
         }
-        else
+        //if the second value is more than the first value
+        else if (mod1 < mod2)
         {
-            greatestCommonDivisor = num1;
+            modCalc = mod2 % mod1;
+            mod1 = mod2;
+            greatestCommonDivisor = mod2;
+            mod2 = modCalc;
         }
-    } while (num1 != num2);
+        
+    }
 
+    //return gcd
     return greatestCommonDivisor;
 }
