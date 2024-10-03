@@ -41,14 +41,49 @@ double get_gc_content(const string& dna)
 string get_reverse_string(string dna)
 {
     //Declare Local Variables
-    int dnaLength = dna.size();
-    string revString;
+    string revDna;
 
     //Initialize for loop
     for(auto i = dna.size(); i > 0; i--)
     {
-        revString += dna[i-1];
+        revDna += dna[i-1];
     }
     //return reversed string
-    return revString;
+    return revDna;
+}
+
+string dna_complement(string dna)
+{
+    //Declare Local Variables
+    string compDna;
+
+    //Initialize for loop
+    for(auto i = dna.size(); i > 0; i--)
+    {
+        //Intialize if else if statement
+        //Check for A, Update to T
+        if(dna[i-1] == 65 || dna[i-1] == 97)
+        {
+            compDna += "T";
+        }
+        else if (dna[i-1] == 116 || dna[i-1] == 84)
+        {
+            compDna += "A";
+        }
+        else if (dna[i-1] == 67 || dna[i-1] == 99)
+        {
+            compDna += "G";
+        }
+        else if (dna[i-1] == 71 || dna[i-1] == 103)
+        {
+            compDna += "C";
+        }
+        else
+        {
+            i = 0;
+            compDna = "[Invalid characters entered,\nplease check inputs before continuting]"; 
+        }
+    }
+
+    return compDna;
 }
