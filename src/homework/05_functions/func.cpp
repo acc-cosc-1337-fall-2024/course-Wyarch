@@ -66,6 +66,7 @@ string dna_complement(string dna)
         {
             compDna += "T";
         }
+        //Checks for T, Updates to A
         else if (dna[i-1] == 116 || dna[i-1] == 84)
         {
             compDna += "A";

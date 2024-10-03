@@ -1,4 +1,5 @@
 #include "string"
+#include <iostream>
 using std::string;
 
 //add function(s) prototype here
