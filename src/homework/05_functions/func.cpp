@@ -71,14 +71,17 @@ string dna_complement(string dna)
         {
             compDna += "A";
         }
+        //Checks for C, Updates to G
         else if (dna[i-1] == 67 || dna[i-1] == 99)
         {
             compDna += "G";
         }
+        //Checks for G, Updates to C
         else if (dna[i-1] == 71 || dna[i-1] == 103)
         {
             compDna += "C";
         }
+        //Fall back else statement
         else
         {
             i = 0;
@@ -86,5 +89,6 @@ string dna_complement(string dna)
         }
     }
 
+    //return complement dna
     return compDna;
 }
