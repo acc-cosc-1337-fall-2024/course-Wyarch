@@ -4,11 +4,14 @@ int main()
 {
 	int userSelection;
 	int position;
+	bool exitFlag;
+	bool continueFlag;
 	string firstPlayer;
 	TicTacToe game;
 
 	do
 	{
+		exitFlag = false;
 		cout<<"Enter first player: ";
 		cin>>firstPlayer;
 		
@@ -23,22 +26,29 @@ int main()
 			game.display_board();
 		}
 
+
+
 		do
 		{
-		cout<<"Play again?\n1. Yes\n2. No\n";
-		cin>>userSelection;
+			cout<<"Play again?\n1. Yes\n2. No\n";
+			cin>>userSelection;
 
-		if(userSelection > 2 || userSelection < 1)
-		{
-			cout<<"Invalid input. Please Enter an integer from 1 - 2.\n";
-		}
-		else if(userSelection == 2)
-		{
-			cout<<"Exiting game...\n";
-		}
-		}while(userSelection != 2);
+			if(userSelection > 2 || userSelection < 1)
+			{
+				cout<<"Invalid input. Please Enter an integer from 1 - 2.\n";
+			}
+			else if(userSelection == 2)
+			{
+				exitFlag = true;
+				cout<<"Exiting game...\n";
+			}
+			else
+			{
+				continueFlag = true;
+			}
+		}while(exitFlag != true && continueFlag != true);
 
-	}while(userSelection != 2);
+	}while(exitFlag != true);
 	
 	return 0;
 }
