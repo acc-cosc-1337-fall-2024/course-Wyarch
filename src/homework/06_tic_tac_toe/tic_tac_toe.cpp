@@ -4,7 +4,11 @@
 //Public Functions
 bool TicTacToe::game_over()
 {
-    if(check_board_full() || check_diagonal_win())
+    if(check_diagonal_win() || check_row_win() || check_column_win())
+    {
+        return true;
+    }
+    else if(check_board_full())
     {
         return true;
     }
@@ -50,6 +54,18 @@ void TicTacToe::set_next_player()
     else
     {
         player = "X";
+    }
+}
+
+void TicTacToe::set_winner()
+{
+    if(player == "X")
+    {
+        winner = "O";
+    }
+    else
+    {
+        winner = "X";
     }
 }
 
@@ -141,4 +157,38 @@ bool TicTacToe::check_diagonal_win()
             countO++;
         }
     }*/
+}
+
+bool TicTacToe::check_row_win()
+{
+    for(int i = 0; i < 9; i+=3)
+    {
+        if(spots[i] == "X" && spots[i+1] == "X" && spots[i+2] == "X")
+        {
+            return true;
+        }
+        else if(spots[i] == "O" && spots[i+1] == "O" && spots[i+2] == "O")
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+bool TicTacToe::check_column_win()
+{
+    for(int i = 0; i < 9; i+=1)
+    {
+        if(spots[i] == "X" && spots[i+3] == "X" && spots[i+6] == "X")
+        {
+            return true;
+        }
+        else if(spots[i] == "O" && spots[i+3] == "O" && spots[i+6] == "O")
+        {
+            return true;
+        }
+    }
+    
+    return false;
 }
