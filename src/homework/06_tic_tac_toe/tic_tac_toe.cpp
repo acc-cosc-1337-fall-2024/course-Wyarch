@@ -6,10 +6,12 @@ bool TicTacToe::game_over()
 {
     if(check_diagonal_win() || check_row_win() || check_column_win())
     {
+        set_winner();
         return true;
     }
     else if(check_board_full())
     {
+        set_winner();
         return true;
     }
     
@@ -59,7 +61,11 @@ void TicTacToe::set_next_player()
 
 void TicTacToe::set_winner()
 {
-    if(player == "X")
+    if(check_board_full() && !check_column_win() && !check_diagonal_win() && !check_row_win())
+    {
+        winner = "C";
+    }
+    else if(winner == "X")
     {
         winner = "O";
     }
@@ -178,7 +184,7 @@ bool TicTacToe::check_row_win()
 
 bool TicTacToe::check_column_win()
 {
-    for(int i = 0; i < 9; i+=1)
+    for(int i = 0; i < 3; i+=1)
     {
         if(spots[i] == "X" && spots[i+3] == "X" && spots[i+6] == "X")
         {

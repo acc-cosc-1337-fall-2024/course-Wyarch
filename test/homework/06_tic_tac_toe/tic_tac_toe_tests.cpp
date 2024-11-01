@@ -6,7 +6,7 @@ TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
 
-/*TEST_CASE("Test game over if 9 slots are selected.")
+TEST_CASE("Test game over if 9 slots are selected.")
 {
 	TicTacToe game;
 	
@@ -19,18 +19,18 @@ TEST_CASE("Verify Test Configuration", "verification") {
 
 	game.mark_board(4);
 
-	game.mark_board(5);
+	game.mark_board(8);
 
-	game.mark_board(6);
+	game.mark_board(5);
 
 	game.mark_board(7);
 
 	game.mark_board(9);
 	
-	game.mark_board(8);
-	game.display_board();
-	REQUIRE(game.game_over() == true);
-}*/
+	game.mark_board(6);
+	game.game_over();
+	REQUIRE(game.get_winner() == "C");
+}
 
 TEST_CASE("Test first player set to X")
 {
