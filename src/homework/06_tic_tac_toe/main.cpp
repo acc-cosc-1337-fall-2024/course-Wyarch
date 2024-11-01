@@ -4,17 +4,31 @@ int main()
 {
 	int userSelection;
 	int position;
-	bool exitFlag;
-	bool continueFlag;
+	bool exitFlag = false;
+	bool continueFlag = false;
 	string firstPlayer;
 	TicTacToe game;
 
 	do
 	{
 		exitFlag = false;
-		cout<<"Enter first player: ";
-		cin>>firstPlayer;
 		
+		do
+		{
+			cout<<"Enter first player: ";
+			cin>>firstPlayer;
+
+			if(firstPlayer == "X" || firstPlayer == "O")
+			{
+				continueFlag = true;
+			}
+			else
+			{
+				cout<<"Invalid choice. Player should be X or O.\n";
+			}
+
+		}while(continueFlag != true);
+
 		game.start_game(firstPlayer);
 		game.display_board();
 

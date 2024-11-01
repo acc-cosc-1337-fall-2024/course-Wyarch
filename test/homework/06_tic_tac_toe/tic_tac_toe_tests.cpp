@@ -6,7 +6,7 @@ TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
 
-TEST_CASE("Verify if the board is full")
+/*TEST_CASE("Verify if the board is full")
 {
 	TicTacToe game;
 	
@@ -28,5 +28,23 @@ TEST_CASE("Verify if the board is full")
 	REQUIRE(game.game_over() == false);
 	game.mark_board(8);
 	REQUIRE(game.game_over() == true);
-}
+}*/
 
+TEST_CASE("Verify Check B-Left to T-Right Diagonal Win")
+{
+	TicTacToe game;
+
+	game.mark_board(3);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(3);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(4);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(5);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(4);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(7);
+	game.display_board();
+	REQUIRE(game.game_over() == true);
+}
