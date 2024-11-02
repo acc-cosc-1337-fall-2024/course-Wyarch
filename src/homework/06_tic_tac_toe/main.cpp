@@ -40,7 +40,7 @@ int main()
 			game.display_board();
 		}
 
-
+		cout<<"The Winner is: "<<game.get_winner()<<"\n\n";
 
 		do
 		{
