@@ -12,24 +12,25 @@ TEST_CASE("Test game over if 9 slots are selected.")
 	
 	game.start_game("X");
 	game.mark_board(1);
-
+	REQUIRE(game.game_over() == false);
 	game.mark_board(2);
-
+	REQUIRE(game.game_over() == false);
 	game.mark_board(3);
-
+	REQUIRE(game.game_over() == false);
 	game.mark_board(4);
-
+	REQUIRE(game.game_over() == false);
 	game.mark_board(8);
-
+	REQUIRE(game.game_over() == false);
 	game.mark_board(5);
-
+	REQUIRE(game.game_over() == false);
 	game.mark_board(7);
-
+	REQUIRE(game.game_over() == false);
 	game.mark_board(9);
-	
+	REQUIRE(game.game_over() == false);
 	game.mark_board(6);
 	game.game_over();
 	REQUIRE(game.get_winner() == "C");
+	REQUIRE(game.game_over() == true);
 }
 
 TEST_CASE("Test first player set to X")
