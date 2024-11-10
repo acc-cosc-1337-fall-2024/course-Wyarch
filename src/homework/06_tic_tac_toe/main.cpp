@@ -1,13 +1,16 @@
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_manager.h"
 
 int main() 
 {
 	int userSelection;
 	int position;
+	int o,x,t;
 	bool exitFlag = false;
 	bool continueFlag = false;
 	string firstPlayer;
 	TicTacToe game;
+	TicTacToeManager manager;
 
 	do
 	{
@@ -25,6 +28,7 @@ int main()
 			else
 			{
 				cout<<"Invalid choice. Player should be X or O.\n";
+				continueFlag = false;
 			}
 
 		}while(continueFlag != true);
@@ -40,7 +44,10 @@ int main()
 			game.display_board();
 		}
 
-		cout<<"The Winner is: "<<game.get_winner()<<"\n\n";
+		manager.save_game(game);
+		manager.get_winner_total(o,x,t);
+		cout<<"The Winner is: "<<game.get_winner()<<"\n";
+		cout<<"The Current Win Count:\n"<<"X Wins: "<<x<<"\n"<<"O Wins: "<<o<<"\n"<<"Ties: "<<t<<"\n\n";
 
 		do
 		{
