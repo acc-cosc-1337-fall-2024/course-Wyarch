@@ -8,7 +8,7 @@ TEST_CASE("Verify Test Configuration", "verification") {
 
 TEST_CASE("Test game over if 9 slots are selected.")
 {
-	TicTacToe game;
+	TicTacToe3 game;
 	
 	game.start_game("X");
 	game.mark_board(1);
@@ -35,14 +35,14 @@ TEST_CASE("Test game over if 9 slots are selected.")
 
 TEST_CASE("Test first player set to X")
 {
-	TicTacToe game;
+	TicTacToe3 game;
 	game.start_game("X");
 	REQUIRE(game.get_player() == "X");
 }
 
 TEST_CASE("Test first player set to O")
 {
-	TicTacToe game;
+	TicTacToe3 game;
 	game.start_game("O");
 	REQUIRE(game.get_player() == "O");
 }
@@ -51,7 +51,7 @@ TEST_CASE("Test first player set to O")
 
 TEST_CASE("Test win diagonally from top right")
 {
-	TicTacToe game;
+	TicTacToe3 game;
 	
 	game.start_game("X");
 	game.mark_board(3);
@@ -68,7 +68,7 @@ TEST_CASE("Test win diagonally from top right")
 
 TEST_CASE("Test win diagonally from top left")
 {
-	TicTacToe game;
+	TicTacToe3 game;
 
 	game.start_game("X");
 	game.mark_board(1);
@@ -85,7 +85,7 @@ TEST_CASE("Test win diagonally from top left")
 
 TEST_CASE("Test win by first row")
 {
-	TicTacToe game;
+	TicTacToe3 game;
 
 	game.start_game("X");
 	game.mark_board(1);
@@ -102,7 +102,7 @@ TEST_CASE("Test win by first row")
 
 TEST_CASE("Test win by second row")
 {
-	TicTacToe game;
+	TicTacToe3 game;
 
 	game.start_game("X");
 	game.mark_board(4);
@@ -119,7 +119,7 @@ TEST_CASE("Test win by second row")
 
 TEST_CASE("Test win by third row")
 {
-	TicTacToe game;
+	TicTacToe3 game;
 
 	game.start_game("O");
 	game.mark_board(7);
@@ -136,7 +136,7 @@ TEST_CASE("Test win by third row")
 
 TEST_CASE("Test win by first column")
 {
-	TicTacToe game;
+	TicTacToe3 game;
 
 	game.start_game("X");
 	game.mark_board(1);
@@ -153,7 +153,7 @@ TEST_CASE("Test win by first column")
 
 TEST_CASE("Test win by second column")
 {
-	TicTacToe game;
+	TicTacToe3 game;
 
 	game.start_game("X");
 	game.mark_board(2);
@@ -170,7 +170,7 @@ TEST_CASE("Test win by second column")
 
 TEST_CASE("Test win by third column ")
 {
-	TicTacToe game;
+	TicTacToe3 game;
 
 	game.start_game("X");
 	game.mark_board(3);
@@ -187,7 +187,7 @@ TEST_CASE("Test win by third column ")
 
 TEST_CASE("Test get winner class function ")
 {
-	TicTacToe game;
+	TicTacToe3 game;
 
 	game.start_game("X");
 	game.mark_board(1);
@@ -206,7 +206,7 @@ TEST_CASE("Test get winner class function ")
 TEST_CASE("Test TicTacToeManager get winner total function")
 {
 	TicTacToeManager manager;
-	TicTacToe game;
+	TicTacToe3 game;
 
 	int o,x,t;
 

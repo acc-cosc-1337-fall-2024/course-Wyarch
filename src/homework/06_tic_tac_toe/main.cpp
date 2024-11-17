@@ -9,7 +9,7 @@ int main()
 	bool exitFlag = false;
 	bool continueFlag = false;
 	string firstPlayer;
-	TicTacToe game;
+	TicTacToe game(3);
 	TicTacToeManager manager;
 
 	do
@@ -44,7 +44,7 @@ int main()
 			game.display_board();
 		}
 
-		manager.save_game(game);
+		//manager.save_game(game);
 		manager.get_winner_total(o,x,t);
 		cout<<"The Winner is: "<<game.get_winner()<<"\n";
 		cout<<"The Current Win Count:\n"<<"X Wins: "<<x<<"\n"<<"O Wins: "<<o<<"\n"<<"Ties: "<<t<<"\n\n";

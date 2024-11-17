@@ -1,7 +1,26 @@
 //cpp
 #include "tic_tac_toe.h"
 
+//Protected Functions
+bool TicTacToe::check_diagonal_win()
+{
+    return false;
+}
+
+bool TicTacToe::check_row_win()
+{
+    return false;
+}
+
+bool TicTacToe::check_column_win()
+{
+    return false;
+}
+
 //Public Functions
+
+
+
 bool TicTacToe::game_over()
 {
     if(check_diagonal_win() || check_row_win() || check_column_win())
@@ -86,19 +105,4 @@ bool TicTacToe::check_board_full()
     }
 
     return true;
-}
-
-bool TicTacToe::check_diagonal_win()
-{
-    return false;
-}
-
-bool TicTacToe::check_row_win()
-{
-    return false;
-}
-
-bool TicTacToe::check_column_win()
-{
-    return false;
 }

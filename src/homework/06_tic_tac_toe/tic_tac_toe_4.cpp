@@ -11,7 +11,7 @@ else
 false
 */
 
-bool TicTacToe::check_column_win()
+bool TicTacToe4::check_column_win()
 {
     for(int i = 0; i < 4; i+=1)
     {
@@ -38,7 +38,7 @@ Win by row if
 12,13,14, 15 are equal
 */
 
-bool TicTacToe::check_row_win()
+bool TicTacToe4::check_row_win()
 {
     for(int i = 0; i < 16; i+=4)
     {
@@ -65,7 +65,7 @@ Win diagonally
 
 */
 
-bool TicTacToe::check_diagonal_win()
+bool TicTacToe4::check_diagonal_win()
 {
     int count;
 

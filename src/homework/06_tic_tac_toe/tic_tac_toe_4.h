@@ -4,7 +4,7 @@
 #ifndef TIC_TAC_TOE_4
 #define TIC_TAC_TOE_4
 
-class TicTacToe4:TicTacToe
+class TicTacToe4:public TicTacToe
 {
 public:
     

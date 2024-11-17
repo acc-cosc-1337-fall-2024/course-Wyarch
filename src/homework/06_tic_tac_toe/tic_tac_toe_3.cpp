@@ -10,7 +10,7 @@ else
 false
 */
 
-bool TicTacToe::check_column_win()
+bool TicTacToe3::check_column_win()
 {
     for(int i = 0; i < 3; i+=1)
     {
@@ -23,7 +23,6 @@ bool TicTacToe::check_column_win()
             return true;
         }
     }
-    
     return false;
 }
 
@@ -37,7 +36,7 @@ Win by row if
 6,7,8 are equal
 */
 
-bool TicTacToe::check_row_win()
+bool TicTacToe3::check_row_win()
 {
     for(int i = 0; i < 9; i+=3)
     {
@@ -50,7 +49,6 @@ bool TicTacToe::check_row_win()
             return true;
         }
     }
-
     return false;
 }
 
@@ -63,7 +61,7 @@ Win diagonally
 
 */
 
-bool TicTacToe::check_diagonal_win()
+bool TicTacToe3::check_diagonal_win()
 {
     int count;
 

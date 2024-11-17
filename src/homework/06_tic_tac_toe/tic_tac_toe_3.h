@@ -4,7 +4,7 @@
 #ifndef TIC_TAC_TOE_3
 #define TIC_TAC_TOE_3
 
-class TicTacToe3:TicTacToe
+class TicTacToe3:public TicTacToe
 {
 public:
 
@@ -12,9 +12,9 @@ public:
 
 private:
 
-    bool check_diagonal_win();
-    bool check_row_win();
-    bool check_column_win();
+    bool check_diagonal_win() override;
+    bool check_row_win() override;
+    bool check_column_win() override;
     
 };
 
