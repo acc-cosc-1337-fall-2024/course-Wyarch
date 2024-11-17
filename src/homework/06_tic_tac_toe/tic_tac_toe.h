@@ -10,8 +10,15 @@ using std::string; using std::cout; using std::cin; using std::vector;
 
 class TicTacToe
 {
+protected:
+
+    virtual bool check_diagonal_win();
+    virtual bool check_row_win();
+    virtual bool check_column_win();
+
 public:
 
+    TicTacToe(int size = 3) {vector<string> spots{size*size," "};}
     bool game_over();
     void start_game(string firstPlayer);
     void mark_board(int position);
@@ -23,14 +30,11 @@ private:
 
     string player;
     string winner;
-    vector<string> spots{9, " "};
+    vector<string> spots;
     void clear_board();
     void set_next_player();
     void set_winner();
     bool check_board_full();
-    bool check_diagonal_win();
-    bool check_row_win();
-    bool check_column_win();
 };
 
 #endif
