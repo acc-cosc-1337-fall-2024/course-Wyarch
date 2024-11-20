@@ -206,56 +206,56 @@ TEST_CASE("Test get winner class function ")
 TEST_CASE("Test TicTacToeManager get winner total function")
 {
 	TicTacToeManager manager;
-	TicTacToe3 game;
+	unique_ptr<TicTacToe3> game = std::make_unique<TicTacToe3>();
 
 	int o,x,t;
 
 	//Start Game 1
-	game.start_game("X");
-	game.mark_board(1);
-	REQUIRE(game.game_over() == false);
-	game.mark_board(2);
-	REQUIRE(game.game_over() == false);
-	game.mark_board(5);
-	REQUIRE(game.game_over() == false);
-	game.mark_board(6);
-	REQUIRE(game.game_over() == false);
-	game.mark_board(9);
-	REQUIRE(game.game_over() == true);
+	game->start_game("X");
+	game->mark_board(1);
+	REQUIRE(game->game_over() == false);
+	game->mark_board(2);
+	REQUIRE(game->game_over() == false);
+	game->mark_board(5);
+	REQUIRE(game->game_over() == false);
+	game->mark_board(6);
+	REQUIRE(game->game_over() == false);
+	game->mark_board(9);
+	REQUIRE(game->game_over() == true);
 	manager.save_game(game);
 	//Start Game 2
-	game.start_game("O");
-	game.mark_board(1);
-	REQUIRE(game.game_over() == false);
-	game.mark_board(2);
-	REQUIRE(game.game_over() == false);
-	game.mark_board(5);
-	REQUIRE(game.game_over() == false);
-	game.mark_board(6);
-	REQUIRE(game.game_over() == false);
-	game.mark_board(9);
-	REQUIRE(game.game_over() == true);
+	game->start_game("O");
+	game->mark_board(1);
+	REQUIRE(game->game_over() == false);
+	game->mark_board(2);
+	REQUIRE(game->game_over() == false);
+	game->mark_board(5);
+	REQUIRE(game->game_over() == false);
+	game->mark_board(6);
+	REQUIRE(game->game_over() == false);
+	game->mark_board(9);
+	REQUIRE(game->game_over() == true);
 	manager.save_game(game);
 	//Start Game 3
-	game.start_game("X");
-	game.mark_board(1);
-	REQUIRE(game.game_over() == false);
-	game.mark_board(9);
-	REQUIRE(game.game_over() == false);
-	game.mark_board(7);
-	REQUIRE(game.game_over() == false);
-	game.mark_board(5);
-	REQUIRE(game.game_over() == false);
-	game.mark_board(6);
-	REQUIRE(game.game_over() == false);
-	game.mark_board(4);
-	REQUIRE(game.game_over() == false);
-	game.mark_board(8);
-	REQUIRE(game.game_over() == false);
-	game.mark_board(2);
-	REQUIRE(game.game_over() == false);
-	game.mark_board(3);
-	REQUIRE(game.game_over() == true);
+	game->start_game("X");
+	game->mark_board(1);
+	REQUIRE(game->game_over() == false);
+	game->mark_board(9);
+	REQUIRE(game->game_over() == false);
+	game->mark_board(7);
+	REQUIRE(game->game_over() == false);
+	game->mark_board(5);
+	REQUIRE(game->game_over() == false);
+	game->mark_board(6);
+	REQUIRE(game->game_over() == false);
+	game->mark_board(4);
+	REQUIRE(game->game_over() == false);
+	game->mark_board(8);
+	REQUIRE(game->game_over() == false);
+	game->mark_board(2);
+	REQUIRE(game->game_over() == false);
+	game->mark_board(3);
+	REQUIRE(game->game_over() == true);
 	manager.save_game(game);
 	//Get Win Total
 	manager.get_winner_total(o,x,t);
